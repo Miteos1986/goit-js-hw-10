@@ -61,7 +61,7 @@ startBtn.addEventListener("click", event => {
     setTimeout(() => {
     const currentTime = Date.now();
     const diff = userSelectedDate - currentTime;
-    console.log();
+    updClockFace(convertMs(diff));
     }, 1000)
     });
   
