@@ -29,11 +29,20 @@ const options = {
     onClose(selectedDates) {
       console.log(userSelectedDate = selectedDates[0]);
       if (userSelectedDate < Date.now()) {iziToast.error({
-                message: 'Please choose a date in the future'
+        class: "modalError",
+        iconColor: "white",
+        maxWidth: "302",
+                title: "Error",
+                titleColor: "white",
+                message: 'Please choose a date in the future',
+                position: "topRight",
+                backgroundColor: "red",
+                messageColor: "white"
     });
 startBtn.disable = true;
     } else {startBtn.disable = false}
   },
+  
 };
 
 flatpickr(input, options);
