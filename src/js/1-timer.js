@@ -58,7 +58,8 @@ startBtn.disable = true;
 flatpickr(input, options);
 
 startBtn.addEventListener("click", event => {
-    setTimeout(() => {
+    startBtn.disabled = true;
+    setInterval(() => {
     const currentTime = Date.now();
     const diff = userSelectedDate - currentTime;
     updClockFace(convertMs(diff));
