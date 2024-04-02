@@ -12,10 +12,10 @@ import "izitoast/dist/css/iziToast.min.css";
 const startBtn = document.querySelector("button[data-start]")
 const input = document.querySelector("#datetime-picker")
 
-const days = document.querySelector("[data-days]")
-const hours = document.querySelector("[data-hours]")
-const minutes = document.querySelector("[data-minutes]")
-const seconds = document.querySelector("[data-seconds]")
+const timerDays = document.querySelector("[data-days]")
+const timerHours = document.querySelector("[data-hours]")
+const timerMinutes = document.querySelector("[data-minutes]")
+const timerSeconds = document.querySelector("[data-seconds]")
 
 
 
@@ -66,6 +66,17 @@ startBtn.addEventListener("click", event => {
     });
   
 
+function updClockFace ({days, hours, minutes, seconds }){
+timerDays.textContent = (days),
+timerHours.textContent = (hours),
+timerMinutes.textContent = (minutes),
+timerSeconds.textContent = (seconds)
+}
+
+function addLeadingZero(value) {
+    return String(value).padStart(2,"0");
+}
+
 function convertMs(ms) {
     // Number of milliseconds per unit of time
     const second = 1000;
@@ -84,7 +95,6 @@ function convertMs(ms) {
   
     return { days, hours, minutes, seconds };
     
+   
   } 
- function addLeadingZero(value) {
-    return String(value).padStart(2,"0");
-}
+ 
