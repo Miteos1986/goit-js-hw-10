@@ -1,2 +1,2 @@
-import"./assets/modulepreload-polyfill-3cfb730f.js";console.log("timer");
+import"./assets/modulepreload-polyfill-3cfb730f.js";import{f as a,i as n}from"./assets/vendor-77e16229.js";const t=document.querySelector("button[data-start]"),r=document.querySelector("#datetime-picker");t.addEventListener("click",o=>{e=setInterval(()=>{console.log(`interval, ${e}`)},1e3)});let e=0;const s={enableTime:!0,time_24hr:!0,defaultDate:new Date,minuteIncrement:1,onClose(o){console.log(e=o[0]),e<Date.now()?(n.error({message:"Please choose a date in the future"}),t.disable=!0):t.disable=!1}};a(r,s);
 //# sourceMappingURL=commonHelpers.js.map
