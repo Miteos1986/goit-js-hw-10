@@ -36,4 +36,4 @@ startBtn.disable = true;
   },
 };
 
-flatpickr(startBtn, options);
+flatpickr(input, options);
