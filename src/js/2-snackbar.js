@@ -26,13 +26,24 @@ function handleSubmit (event) {
 promise
  .then((delay) => {
     iziToast.show({
-        titleColor: white,
-        title: `OK`,
-               message: `✅ Fulfilled promise in ${delay}ms`
+        position: 'topRight',
+                titleColor: "white",
+        titleSize: '18px',
+        backgroundColor: '#59a10d',
+        messageColor:"white",
+        messageSize: '16px',
+        title: 'OK',
+        message: `✅ Fulfilled promise in ${delay}ms`
     })
 })
 .catch((delay) => {
     iziToast.show({
+        position: 'topRight',
+        titleColor: "white",
+        titleSize: '18px',
+        backgroundColor: '#b54657',
+        messageColor:"white",
+        messageSize: '16px',
         title: `Error`,
         message: `❌ Rejected promise in ${delay}ms`
 
