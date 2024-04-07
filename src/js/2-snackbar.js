@@ -16,12 +16,13 @@ function handleSubmit (event) {
 
     const promise = new Promise((resolve, reject) =>{
     const delay = Number(form.delay.value)
+    setTimeout(() => {
         if (form.state.value === "fulfilled") {
-            setTimeout(() => resolve(delay), delay)
-        } else if (form.state.value === "rejected") {
-            setTimeout(() => reject(delay), delay)
+            resolve(delay);
+        } else { reject(delay);
         }
-    })
+    }, delay);
+    });
 
 promise
  .then((delay) => {

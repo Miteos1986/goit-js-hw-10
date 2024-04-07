@@ -51,6 +51,7 @@ flatpickr(input, options);
 
 startBtn.addEventListener('click', event => {
   startBtn.disabled = true;
+  input.disabled = true;
   const timerInterval = setInterval(() => {
     const currentTime = Date.now();
     const diff = userSelectedDate - currentTime;
