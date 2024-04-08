@@ -9,26 +9,29 @@ form.addEventListener("submit", handleSubmit)
 
 
 
-
 function handleSubmit (event) {
     event.preventDefault();
-  
+    const delay = Number(form.delay.value);
+    const state = form.elements.state.value;
+console.log(state);
 
     const promise = new Promise((resolve, reject) =>{
-    const delay = Number(form.delay.value)
+    
     setTimeout(() => {
-        if (form.state.value === "fulfilled") {
+        if (state === "fulfilled") {
             resolve(delay);
         } else { reject(delay);
         }
     }, delay);
     });
 
+
+
 promise
  .then((delay) => {
     iziToast.show({
         position: 'topRight',
-                titleColor: "white",
+        titleColor: "white",
         titleSize: '18px',
         backgroundColor: '#59a10d',
         messageColor:"white",
